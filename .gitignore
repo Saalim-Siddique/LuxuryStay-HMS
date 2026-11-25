@@ -1,0 +1,87 @@
+# ── Node / npm / Package Managers ────────────────────────────────────────────
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+.npm
+.pnp
+.pnp.js
+.eslintcache
+.stylelintcache
+
+# ── Environment Variables (allow .env.example templates) ──────────────────────
+.env
+.env.*
+!.env.example
+
+# ── Build Outputs & Coverage ──────────────────────────────────────────────────
+dist/
+dist-ssr/
+build/
+out/
+coverage/
+.nyc_output/
+*.tsbuildinfo
+.vite/
+
+# ── Logs & Temporary Files ────────────────────────────────────────────────────
+logs/
+*.log
+tmp/
+temp/
+*.tmp
+*.temp
+*.bak
+*.swp
+*.swo
+*~
+
+# ── Local Uploads & Storage ───────────────────────────────────────────────────
+uploads/
+public/uploads/
+storage/
+
+# ── Secrets, Certificates & Private Keys ──────────────────────────────────────
+*.pem
+*.key
+*.crt
+*.cer
+*.csr
+*.der
+*.p12
+*.pfx
+*.jks
+*.keystore
+*.secret
+secrets/
+certs/
+*credentials*.json
+*serviceAccount*.json
+
+# ── Local Databases & Dumps ───────────────────────────────────────────────────
+*.sqlite
+*.sqlite3
+*.db
+dump/
+*.dump
+
+# ── OS Generated Files ────────────────────────────────────────────────────────
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+Thumbs.db
+Thumbs.db:encryptable
+ehthumbs.db
+Desktop.ini
+
+# ── Editor / IDE ──────────────────────────────────────────────────────────────
+.vscode/
+.idea/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?

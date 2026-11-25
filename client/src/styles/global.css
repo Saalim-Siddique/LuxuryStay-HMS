@@ -1,0 +1,299 @@
+/* ============================================================================
+   LuxuryStay HMS — Global Base Styles & Bootstrap Harmony
+   ============================================================================ */
+@import './variables.css';
+@import './components.css';
+
+/* ── Reset & Base ───────────────────────────────────────────────────────────── */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  font-weight: var(--font-weight-regular);
+  line-height: var(--leading-normal);
+  color: var(--text-body);
+  background-color: var(--bg-canvas);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ── Editorial & Executive Typography ───────────────────────────────────────── */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--leading-snug);
+  color: var(--text-primary);
+  letter-spacing: var(--tracking-tight);
+  margin-top: 0;
+}
+
+h1 { font-size: var(--text-4xl); line-height: var(--leading-tight); }
+h2 { font-size: var(--text-3xl); line-height: var(--leading-tight); }
+h3 { font-size: var(--text-2xl); }
+h4 { font-size: var(--text-xl); }
+h5 { font-size: var(--text-lg); font-family: var(--font-sans); font-weight: var(--font-weight-semibold); letter-spacing: 0; }
+h6 { font-size: var(--text-md); font-family: var(--font-sans); font-weight: var(--font-weight-semibold); letter-spacing: 0; }
+
+p {
+  margin-top: 0;
+  color: var(--text-body);
+}
+
+a {
+  color: var(--text-accent);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-navy);
+}
+
+img,
+video,
+svg {
+  max-width: 100%;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+/* ── Global Keyboard Accessibility ──────────────────────────────────────────── */
+:focus-visible {
+  outline: var(--focus-ring-width) solid var(--focus-ring-color);
+  outline-offset: var(--focus-ring-offset);
+}
+
+/* ── Bootstrap 5 Variable Alignment ─────────────────────────────────────────── */
+:root {
+  --bs-primary:           var(--color-navy);
+  --bs-primary-rgb:       16, 27, 45;
+  --bs-secondary:         var(--color-gold);
+  --bs-secondary-rgb:     200, 164, 93;
+  --bs-body-font-family:  var(--font-sans);
+  --bs-body-color:        var(--text-body);
+  --bs-body-bg:           var(--bg-canvas);
+  --bs-border-radius:     var(--radius-sm);
+  --bs-border-color:      var(--border-subtle);
+}
+
+.btn-gold {
+  background-color: var(--color-gold);
+  border-color: var(--color-gold);
+  color: var(--color-navy);
+  font-weight: var(--font-weight-semibold);
+}
+.btn-gold:hover,
+.btn-gold:focus {
+  background-color: var(--color-gold-600);
+  border-color: var(--color-gold-600);
+  color: var(--color-navy);
+}
+
+/* ── Utility Typography & Color Helpers ─────────────────────────────────────── */
+.font-display   { font-family: var(--font-display) !important; }
+.font-sans      { font-family: var(--font-sans) !important; }
+.tabular-nums   { font-variant-numeric: tabular-nums; }
+
+.ls-eyebrow {
+  display: inline-block;
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: var(--font-weight-semibold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: var(--text-accent);
+}
+
+.ls-editorial-rule {
+  width: 48px;
+  height: 2px;
+  background-color: var(--color-gold);
+  border: 0;
+  margin: var(--space-3) 0;
+}
+
+.text-gold    { color: var(--color-gold) !important; }
+.text-gold-aa { color: var(--text-accent) !important; }
+.text-navy    { color: var(--color-navy) !important; }
+.text-slate   { color: var(--color-slate) !important; }
+.text-ivory   { color: var(--color-ivory) !important; }
+
+.bg-navy      { background-color: var(--color-navy) !important; }
+.bg-gold      { background-color: var(--color-gold) !important; }
+.bg-ivory     { background-color: var(--color-ivory) !important; }
+.border-gold  { border-color: var(--color-gold) !important; }
+
+.cursor-pointer { cursor: pointer; }
+
+/* ── Executive Dashboard Layout Helpers ─────────────────────────────────────── */
+.hms-page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.hms-sidebar {
+  width: var(--sidebar-width);
+  flex-shrink: 0;
+  background-color: var(--bg-sidebar);
+  border-right: 1px solid var(--border-sidebar);
+  min-height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: var(--z-sidebar);
+  overflow-y: auto;
+}
+
+.hms-main {
+  margin-left: var(--sidebar-width);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.hms-topbar {
+  height: var(--header-height);
+  background-color: var(--bg-surface);
+  border-bottom: 1px solid var(--border-subtle);
+  display: flex;
+  align-items: center;
+  padding: 0 var(--space-6);
+  position: sticky;
+  top: 0;
+  z-index: var(--z-sticky);
+}
+
+.hms-content {
+  flex: 1;
+  padding: var(--space-6);
+  background-color: var(--bg-canvas);
+}
+
+.sidebar-logo {
+  padding: var(--space-6);
+  border-bottom: 1px solid var(--border-sidebar);
+}
+
+.sidebar-logo .logo-text {
+  font-family: var(--font-display);
+  font-size: var(--text-xl);
+  font-weight: var(--font-weight-semibold);
+  color: var(--text-inverse);
+  line-height: 1.2;
+}
+
+.sidebar-logo .logo-sub {
+  font-size: 0.6875rem;
+  color: var(--color-gold);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  margin-top: var(--space-1);
+}
+
+.sidebar-nav { padding: var(--space-4) 0; }
+
+.sidebar-nav-link {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-6);
+  color: var(--text-inverse-muted);
+  font-size: var(--text-sm);
+  font-weight: var(--font-weight-medium);
+  transition: background-color var(--transition-fast), color var(--transition-fast);
+  border-left: 3px solid transparent;
+  text-decoration: none;
+}
+
+.sidebar-nav-link:hover {
+  color: var(--text-inverse);
+  background-color: var(--bg-sidebar-hover);
+}
+
+.sidebar-nav-link.active {
+  color: var(--color-gold);
+  background-color: var(--bg-sidebar-active);
+  border-left-color: var(--color-gold);
+}
+
+.sidebar-section-label {
+  padding: var(--space-4) var(--space-6) var(--space-2);
+  font-size: 0.6875rem;
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-widest);
+  color: rgba(255, 255, 255, 0.44);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* ── Stat Card (Flat Executive Navy, restrained gold rule) ──────────────────── */
+.hms-stat-card {
+  background-color: var(--color-navy);
+  color: var(--text-inverse);
+  border: 1px solid var(--color-navy-700);
+  border-top: 2px solid var(--color-gold);
+  border-radius: var(--radius-md);
+  padding: var(--space-5) var(--space-6);
+  box-shadow: var(--shadow-xs);
+}
+
+.hms-stat-card--light {
+  background-color: var(--bg-surface);
+  color: var(--text-primary);
+  border: 1px solid var(--border-subtle);
+  border-top: 2px solid var(--color-gold);
+}
+
+.hms-stat-card .stat-label {
+  font-size: var(--text-xs);
+  color: var(--text-inverse-muted);
+  text-transform: uppercase;
+  letter-spacing: var(--tracking-wide);
+  font-weight: var(--font-weight-semibold);
+}
+
+.hms-stat-card--light .stat-label {
+  color: var(--text-muted);
+}
+
+.hms-stat-card .stat-value {
+  font-size: var(--text-3xl);
+  font-family: var(--font-display);
+  font-weight: var(--font-weight-semibold);
+  color: var(--color-gold);
+  line-height: 1.1;
+  margin-top: var(--space-2);
+  font-variant-numeric: tabular-nums;
+}
+
+.hms-stat-card--light .stat-value {
+  color: var(--color-navy);
+}
+
+@media (max-width: 991.98px) {
+  .hms-sidebar {
+    transform: translateX(-100%);
+    transition: transform var(--transition-base);
+  }
+  .hms-sidebar.open { transform: translateX(0); }
+  .hms-main { margin-left: 0; }
+}
